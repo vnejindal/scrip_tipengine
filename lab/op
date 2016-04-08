@@ -1,0 +1,282 @@
+
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1"><title>
+	Bhav Copy
+</title><link rel="STYLESHEET" type="text/css" href="../../../include/class/style.css" />
+
+    <script language="JavaScript" type="text/javascript">
+        function ChkDate() {
+            var sel_Date;
+            sel_day = document.getElementById("fdate1").value = document.getElementById("fdate1").options[document.getElementById("fdate1").selectedIndex].value;
+            sel_month = document.getElementById("fmonth1").value = document.getElementById("fmonth1").options[document.getElementById("fmonth1").selectedIndex].value;
+            sel_year = document.getElementById("fyear1").value = document.getElementById("fyear1").options[document.getElementById("fyear1").selectedIndex].value;
+            //ValidateDate(sel_day,sel_month,sel_year);
+            var cur_date;
+            var cur_day = new Date().getDate();
+            var cur_month = new Date().getMonth() + 1;
+            var cur_year = new Date().getFullYear();
+            cur_date = cur_year + "-" + cur_month + "-" + cur_day;
+            if (sel_day == 0 || sel_month == 0 || sel_year == 0 || sel_year == "YYYY") {
+                alert("Invalid date");
+                return false;
+            }
+            if (sel_year == cur_year) {
+                if (sel_month > cur_month) {
+                    alert("Future date not allowed");
+                    return false;
+                }
+                else if (sel_month == cur_month) {
+                    if (cur_day == sel_day) {
+                        alert("Current date not allowed");
+                        return false;
+                    }
+                    else if (sel_day > cur_day) {
+                        alert("Future date not allowed");
+                        return false;
+                    }
+                }
+            }
+            if (parseInt(sel_year) > cur_year) {
+                alert("Future date not allowed");
+                return false;
+            }
+            if (sel_year % 4 == 0 || sel_year % 400 == 0) {
+                if (sel_month == 2) {
+                    if (sel_day > 29) {
+                        alert("Invalid value for the leap year " + sel_year);
+                        return false;
+                    }
+                }
+            }
+            else if (sel_month == 2 && sel_day > 28) {
+                alert("Invalid date for the month of feb");
+                return false;
+            }
+            if (sel_month == 4 || sel_month == 6 || sel_month == 9 || sel_month == 11) {
+                if (sel_day > 30) {
+                    alert("Invalid day for the month");
+                    return false;
+                }
+            }
+            sel_Date = sel_year + "-" + sel_day + "-" + sel_month;
+            document.getElementById("DDate").value = sel_Date
+        }
+    </script>
+
+    <!--google analytics-->
+
+    <script type="text/javascript">
+
+        var _gaq = _gaq || [];
+        _gaq.push(['_setAccount', 'UA-27569176-1']);
+        _gaq.push(['_trackPageview']);
+
+        (function() {
+            var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+            ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+            var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+        })();
+
+    </script>
+
+    <!--google analytics-->
+    <style type="text/css">
+        .style1
+        {
+            width: 116px;
+        }
+        .style2
+        {
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 12px;
+            font-variant: normal;
+            text-transform: none;
+            color: #000000;
+            text-decoration: none;
+            height: 25px;
+            background-color: #ffffff;
+            text-align: center;
+            width: 116px;
+        }
+    </style>
+</head>
+<body>
+    <form name="form1" method="post" action="Equitydebcopy.aspx" id="form1">
+<div>
+<input type="hidden" name="__VIEWSTATE" id="__VIEWSTATE" value="/wEPDwUJODM1NjAzNjUxD2QWAgIDD2QWEgIBDxYCHgdWaXNpYmxlZxYCAgEPDxYGHgRUZXh0BRNFcXVpdHkgLSAwNy8wNC8yMDE2HgtOYXZpZ2F0ZVVybAVBaHR0cDovL3d3dy5ic2VpbmRpYS5jb20vZG93bmxvYWQvQmhhdkNvcHkvRXF1aXR5L0VRMDcwNDE2X0NTVi5aSVAfAGdkZAIDDxYCHwBnFgICAQ8PFgYfAQUYRGVyaXZhdGl2ZXMgLSAwNy8wNC8yMDE2HwIFSWh0dHA6Ly93d3cuYnNlaW5kaWEuY29tL2Rvd25sb2FkL0JoYXZjb3B5L0Rlcml2YXRpdmUvYmhhdmNvcHkwNy0wNC0xNi56aXAfAGdkZAIFDxYCHwBnFgICAQ8PFgQfAQUlQ3VycmVuY3kgRGVyaXZhdGl2ZSAvSVJEIC0gMDYvMDQvMjAxNh8CBUtodHRwOi8vd3d3LmJzZWluZGlhLmNvbS9ic2VkYXRhL0NJTUxfYmhhdmNvcHkvQ3VycmVuY3lCaGF2Q29weV8yMDE2MDQwNi5aSVBkZAIHDxYCHwBnFgICAQ8PFgYfAQURRGVidCAtIDA2LzA0LzIwMTYfAgVHaHR0cDovL3d3dy5ic2VpbmRpYS5jb20vZG93bmxvYWQvQmhhdmNvcHkvRGVidC9ERUJUQkhBVkNPUFkwNjA0MjAxNi56aXAfAGdkZAIJDxYCHwBnFgICAQ8PFgYfAQUQU0xCIC0gMDYvMDQvMjAxNh8CBT5odHRwOi8vd3d3LmJzZWluZGlhLmNvbS9kb3dubG9hZC9CaGF2Y29weS9TTEIvU1EwNjA0MTZfQ1NWLlpJUB8AZ2RkAhUPEGQQFSACREQCMDECMDICMDMCMDQCMDUCMDYCMDcCMDgCMDkCMTACMTECMTICMTMCMTQCMTUCMTYCMTcCMTgCMTkCMjACMjECMjICMjMCMjQCMjUCMjYCMjcCMjgCMjkCMzACMzEVIAJERAExATIBMwE0ATUBNgE3ATgBOQIxMAIxMQIxMgIxMwIxNAIxNQIxNgIxNwIxOAIxOQIyMAIyMQIyMgIyMwIyNAIyNQIyNgIyNwIyOAIyOQIzMAIzMRQrAyBnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2dnZ2RkAhkPEGQQFQsEWVlZWQQyMDE2BDIwMTUEMjAxNAQyMDEzBDIwMTIEMjAxMQQyMDEwBDIwMDkEMjAwOAQyMDA3FQsEWVlZWQQyMDE2BDIwMTUEMjAxNAQyMDEzBDIwMTIEMjAxMQQyMDEwBDIwMDkEMjAwOAQyMDA3FCsDC2dnZ2dnZ2dnZ2dnZGQCHw8WAh8AZxYCAgEPDxYGHwEFE0VxdWl0eSAtIDE1LzAzLzIwMTYfAgVBaHR0cDovL3d3dy5ic2VpbmRpYS5jb20vZG93bmxvYWQvQmhhdkNvcHkvRXF1aXR5L0VRMTUwMzE2X0NTVi5aSVAfAGdkZAIhDw8WBB8BBR5ObyBGaWxlIGF2YWlsYWJsZSBmb3IgRG93bmxvYWQfAGhkZBgBBR5fX0NvbnRyb2xzUmVxdWlyZVBvc3RCYWNrS2V5X18WCgUHcmJ0ZXF0eQUHcmJ0RGVyaQUHcmJ0RGVyaQULcmJ0Q3VycmVuY3kFC3JidEN1cnJlbmN5BQdyYnREZWJ0BQdyYnREZWJ0BQZyYnRTTEIFBnJidFNMQgUJYnRuU3VibWl0/RyQ5ilxOeGuqsEggT5zPJdjOak=" />
+</div>
+
+<div>
+
+	<input type="hidden" name="__VIEWSTATEGENERATOR" id="__VIEWSTATEGENERATOR" value="562AC641" />
+	<input type="hidden" name="__EVENTVALIDATION" id="__EVENTVALIDATION" value="/wEWQALTwPCeBAK2mPnZAgLStfBwAunYnpgKAqPA0OsHAvq94+UEAoyiyLIEAt+i+KwEAt6i+KwEAt2i+KwEAtyi+KwEAtui+KwEAtqi+KwEAtmi+KwEAsii+KwEAsei+KwEAt+iuK8EAt+itK8EAt+isK8EAt+ijK8EAt+iiK8EAt+ihK8EAt+igK8EAt+inK8EAt+i2KwEAt+i1KwEAt6iuK8EAt6itK8EAt6isK8EAt6ijK8EAt6iiK8EAt6ihK8EAt6igK8EAt6inK8EAt6i2KwEAt6i1KwEAt2iuK8EAt2itK8EAp6NuLsKAoGNuLsKAoCNuLsKAoONuLsKAoKNuLsKAoWNuLsKAoSNuLsKAoeNuLsKApaNuLsKApmNuLsKAoGN+LgKAoGN9LgKAoGN8LgKApuo3L4KAuzl2usFAuzlrscOAuzlsqIHAuzlhhkC7OXq9AgC7OX+0wEC7OXCjgoCh9zwlw0Ch9zE8gUCh9zomwMCwova3gMC+taO5QhUv+eHg6aLkpRN4V0gnPLbWzjrpQ==" />
+</div>
+    <table width="778px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td bgcolor="#d6d6d6">
+                <table width="100%" border="0" cellspacing="1" cellpadding="4">
+                    <tr>
+                        <td class="innertable_header1">
+                            <b>Latest Bhav Copy</b>
+                        </td>
+                        <td class="innertable_header1">
+                            <b>Historical Bhav Copy </b>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="TTRow" valign="top">
+                            <table width="300" align="center" cellpadding="0" cellspacing="0" style="left: 20px;
+                                height: 120px;">
+                                <tr>
+                                    <td align="left">
+                                        <ul class="ullist">
+                                            <li id="liZip">
+                                                <a id="btnhylZip" class="tablebluelink" href="http://www.bseindia.com/download/BhavCopy/Equity/EQ070416_CSV.ZIP" target="_self">Equity - 07/04/2016</a></li>
+                                            <li id="liDeri">
+                                                <a id="btnHylDeri" class="tablebluelink" href="http://www.bseindia.com/download/Bhavcopy/Derivative/bhavcopy07-04-16.zip" target="_self">Derivatives - 07/04/2016</a></li>
+                                           
+                                                    
+                                                    <li id="liCurrency">
+                                                <a id="btnCurrency" class="tablebluelink" href="http://www.bseindia.com/bsedata/CIML_bhavcopy/CurrencyBhavCopy_20160406.ZIP" target="_self">Currency Derivative /IRD - 06/04/2016</a></li>
+                                            <li id="liBhav">
+                                                <a id="btnHylBhav" class="tablebluelink" href="http://www.bseindia.com/download/Bhavcopy/Debt/DEBTBHAVCOPY06042016.zip" target="_self">Debt - 06/04/2016</a></li>
+                                            <li id="liSLB">
+                                                <a id="btnHylSLB" class="tablebluelink" href="http://www.bseindia.com/download/Bhavcopy/SLB/SQ060416_CSV.ZIP" target="_self">SLB - 06/04/2016</a></li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                        <td class="TTRow" valign="top">
+                            <table width="350" border="0" cellpadding="0" cellspacing="0">
+                                <tr style="height: 40px" valign="middle">
+                                    <td align="left">
+                                        <span style="color:Black;font-family:Arial;font-size:10pt;"><input id="rbteqty" type="radio" name="Debt" value="rbteqty" checked="checked" /><label for="rbteqty">Equity</label></span>
+                                    </td>
+                                    <td class="style1" align="left">
+                                        <span style="color:Black;font-family:Arial;font-size:10pt;"><input id="rbtDeri" type="radio" name="Debt" value="rbtDeri" /><label for="rbtDeri">Derivatives</label></span>
+                                    </td>
+                                </tr>
+                                <tr style="height: 40px">
+                                    <td align="left">
+                                        <span style="display:inline-block;color:Black;font-family:Arial;font-size:10pt;width:170px;"><input id="rbtCurrency" type="radio" name="Debt" value="rbtCurrency" /><label for="rbtCurrency">Currency Derivative/IRD</label></span>
+                                    </td>
+                                    <td align="left" class="style1">
+                                        <span style="display:inline-block;color:Black;font-family:Arial;font-size:10pt;width:90px;"><input id="rbtDebt" type="radio" name="Debt" value="rbtDebt" /><label for="rbtDebt">Debt</label></span>
+                                    </td>
+                                    <td align="left" width="70">
+                                        <span style="color:Black;font-family:Arial;font-size:10pt;"><input id="rbtSLB" type="radio" name="Debt" value="rbtSLB" /><label for="rbtSLB">SLB</label></span>
+                                    </td>
+                                </tr>
+                                <tr valign="top">
+                                    <td align="left">
+                                        <select name="fdate1" id="fdate1" class="dropdownboxlang" size="1" style="width:60px;">
+	<option value="DD">DD</option>
+	<option value="1">01</option>
+	<option value="2">02</option>
+	<option value="3">03</option>
+	<option value="4">04</option>
+	<option value="5">05</option>
+	<option value="6">06</option>
+	<option value="7">07</option>
+	<option value="8">08</option>
+	<option value="9">09</option>
+	<option value="10">10</option>
+	<option value="11">11</option>
+	<option value="12">12</option>
+	<option value="13">13</option>
+	<option value="14">14</option>
+	<option selected="selected" value="15">15</option>
+	<option value="16">16</option>
+	<option value="17">17</option>
+	<option value="18">18</option>
+	<option value="19">19</option>
+	<option value="20">20</option>
+	<option value="21">21</option>
+	<option value="22">22</option>
+	<option value="23">23</option>
+	<option value="24">24</option>
+	<option value="25">25</option>
+	<option value="26">26</option>
+	<option value="27">27</option>
+	<option value="28">28</option>
+	<option value="29">29</option>
+	<option value="30">30</option>
+	<option value="31">31</option>
+
+</select>
+                                    </td>
+                                    <td align="left" class='style2'>
+                                        <select name="fmonth1" id="fmonth1" class="dropdownboxlang" size="1" style="width:60px;">
+	<option value="0">MM</option>
+	<option value="1">Jan</option>
+	<option value="2">Feb</option>
+	<option selected="selected" value="3">Mar</option>
+	<option value="4">Apr</option>
+	<option value="5">May</option>
+	<option value="6">Jun</option>
+	<option value="7">Jul</option>
+	<option value="8">Aug</option>
+	<option value="9">Sep</option>
+	<option value="10">Oct</option>
+	<option value="11">Nov</option>
+	<option value="12">Dec</option>
+
+</select>
+                                    </td>
+                                    <td align="left">
+                                        <select name="fyear1" id="fyear1" class="dropdownboxlang" align="left" size="1" style="width:80px;">
+	<option value="YYYY">YYYY</option>
+	<option selected="selected" value="2016">2016</option>
+	<option value="2015">2015</option>
+	<option value="2014">2014</option>
+	<option value="2013">2013</option>
+	<option value="2012">2012</option>
+	<option value="2011">2011</option>
+	<option value="2010">2010</option>
+	<option value="2009">2009</option>
+	<option value="2008">2008</option>
+	<option value="2007">2007</option>
+
+</select>
+                                    </td>
+                                    <td>
+                                        <input type="image" name="btnSubmit" id="btnSubmit" src="../../../include/images/submit.gif" onclick="return ChkDate();" style="border-width:0px;" />
+                                        <input type="hidden" name="DDate" id="DDate" value="2016-15-3" />
+                                    </td>
+                                    <td>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="left" colspan="4">
+                                        <ul class="ullist">
+                                            <li id="liSb">
+                                                <a id="btnHylSearBhav" class="tablebluelink" href="http://www.bseindia.com/download/BhavCopy/Equity/EQ150316_CSV.ZIP" target="_self">Equity - 15/03/2016</a></li></ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td align="center" colspan="4">
+                                        
+                                    </td>
+                                </tr>
+                            </table>
+                        </td>
+                    </tr>
+                </table>
+            </td>
+        </tr>
+    </table>
+    <br />
+    <table width="778px" border="0" cellspacing="0" cellpadding="0">
+        <tr>
+            <td colspan="2" align="right">
+                <a href="http://www.bseindia.com/markets/equity/EQReports/BhavCopyhelp.aspx?" class="tablebluelink"
+                    target="_blank">Help with the Bhav Copy</a>
+            </td>
+        </tr>
+    </table>
+    </form>
+</body>
+</html>
