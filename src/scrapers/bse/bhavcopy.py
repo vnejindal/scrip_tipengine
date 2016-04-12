@@ -12,6 +12,10 @@ tbds:
 """
 def download_data(d_url):
   print 'Download URL: ', d_url
+  s_name='/tmp/'
+  fname=re.search(r'EQ.*.ZIP',d_url)
+  s_path += fname.group()
+  urllib.urlretrieve(d_url, spath)
 
 
 def parse_n_get_url(rawfile):
