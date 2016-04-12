@@ -12,8 +12,9 @@ Crawler modules:
    -- Equity Bhavcopy fetcher :
 	-- Daily 
  	-- Old Data
-
--- Get equity bhavcopies before 2007 period. 
+ -- Get equity bhavcopies before 2007 period. 
+ -- date-time stamp support
+ -- error/debug log file support
 
 08-Apr-16
 -- Design a engine that will look for news around the web for a scrip 
